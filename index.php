@@ -1,16 +1,15 @@
 <?php
-include __DIR__ . '/partials/functions.php';
+
 // controllo se è stato inserita la lunghezza della password da generare
 if (isset($_GET['lunghezza']) && $_GET['lunghezza'] != '' && is_numeric($_GET['lunghezza'])) {
+    // se la condizione risulta vera entro e avvio la sessione
+    session_start();
 
-    // assegno il valore del campo input alla variabile lunghezza
-    $lunghezza = $_GET['lunghezza'];
+    // assegno il valore inserito dall'utente a $_SESSION['lunghezza']
+    $_SESSION['lunghezza'] = $_GET['lunghezza'];
 
-    // se la lunghezza richiesta inserita dall'utente è un numero maggiore di 0
-    if ($lunghezza > 0) {
-        // genero la password richiamando la funzione creata appositamente
-        $password = generaPassword($lunghezza);
-    }
+    // effettuo un redirect a my_password.php
+    header('Location: ./my_password.php');
 }
 ?>
 
@@ -34,9 +33,6 @@ if (isset($_GET['lunghezza']) && $_GET['lunghezza'] != '' && is_numeric($_GET['l
                         <input type="text" name="lunghezza" placeholder="Lunghezza password">
                         <button class="btn btn-success " type="submit">Genera password</button>
                     </form>
-                    <div>
-                        <h4><?php echo $password ?? '' ?></h4>
-                    </div>
                 </div>
             </div>
         </div>

@@ -3,7 +3,7 @@
 function generaPassword($lunghezza)
 {
     // variabile che contiene i caratteri che possono essere usati nella generazione della password
-    $caratteri = 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789?!()*&%$#@^?';
+    $caratteri = 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789?!()*&%$#@^?><{}[]';
 
     // inizializzo la variabile che mi conterrà la password 
     $password = '';
