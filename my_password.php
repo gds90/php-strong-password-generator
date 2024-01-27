@@ -1,18 +1,9 @@
 <?php
-// includo il file delle funzioni
-include __DIR__ . '/partials/functions.php';
-
 // avvio la sessione
 session_start();
 
-// assegno il valore di $_SESSION['lunghezza'] alla variabile lunghezza
-$lunghezza = $_SESSION['lunghezza'];
-
-// se la lunghezza richiesta inserita dall'utente è un numero maggiore di 0
-if ($lunghezza > 0) {
-    // genero la password richiamando la funzione creata appositamente
-    $password = generaPassword($lunghezza);
-}
+// assegno il valore di $_SESSION['password'] alla variabile lunghezza
+$password = $_SESSION['password'];
 ?>
 
 <!DOCTYPE html>
