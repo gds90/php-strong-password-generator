@@ -27,6 +27,7 @@ if (isset($_GET['lunghezza']) && is_numeric($_GET['lunghezza']) && ($_GET['lungh
         // effettuo un redirect a my_password.php
         header('Location: ./my_password.php');
     } else {
+        // se non è stata scelta nemmeno un'opzione
         $messaggio = "Scegli almeno un'opzione tra includere numeri, lettere o simboli.";
     }
 } else {
@@ -63,6 +64,7 @@ if (isset($_GET['lunghezza']) && is_numeric($_GET['lunghezza']) && ($_GET['lungh
                                 <input type="text" name="lunghezza" id="lunghezza" placeholder="Lunghezza password">
                             </div>
                             <span>Scegli cosa includere nella password che vuoi generare (scegli almeno una delle opzioni):</span>
+                            <!-- start sezione opzioni  -->
                             <div class="col-12 my-2">
                                 <input type="checkbox" name="numeri" id="numeri">
                                 <label for="numeri" class="me-3">Includi numeri</label>
@@ -73,9 +75,11 @@ if (isset($_GET['lunghezza']) && is_numeric($_GET['lunghezza']) && ($_GET['lungh
                                 <input type="checkbox" name="ripetizione" id="ripetizione">
                                 <label for="ripetizione">Permetti ripetizione di caratteri</label>
                             </div>
+                            <!-- end sezione opzioni  -->
                             <div class="mt-3">
                                 <button class=" btn btn-success " type=" submit">Genera password</button>
                             </div>
+                            <!-- messaggio d'errore  -->
                             <div class="mt-5">
                                 <h4><?php echo $messaggio ?? '' ?></h4>
                             </div>
